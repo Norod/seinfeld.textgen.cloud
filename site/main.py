@@ -19,8 +19,7 @@ def robots():
 
 @app.route('/checkpoint')
 def checkpoint():
-    return ("20210506-0942")
-    #return send_file('hebrew-gpt_neo-tiny/counter', mimetype='text/plain')
+    return ("20211005-1735")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

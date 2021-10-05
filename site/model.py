@@ -7,8 +7,10 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-tokenizer = AutoTokenizer.from_pretrained("Norod78/english-sienfeld-distilgpt2")
-model = AutoModelForCausalLM.from_pretrained("Norod78/english-sienfeld-distilgpt2")
+pre_model_path = './english-sienfeld-distilgpt2'
+
+tokenizer = AutoTokenizer.from_pretrained(pre_model_path)
+model = AutoModelForCausalLM.from_pretrained(pre_model_path)
 
 stop_token = "<|endoftext|>"
 

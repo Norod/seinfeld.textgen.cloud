@@ -5,9 +5,17 @@ import argparse
 import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import os
 
 tokenizer = AutoTokenizer.from_pretrained("Norod78/english-sienfeld-distilgpt2")
 model = AutoModelForCausalLM.from_pretrained("Norod78/english-sienfeld-distilgpt2")
+
+pre_model_path = './english-sienfeld-distilgpt2'
+os.mkdir(pre_model_path)
+
+model.save_pretrained(pre_model_path, save_config=True)
+tokenizer.save_pretrained(pre_model_path)
+tokenizer.save_vocabulary(pre_model_path)
 
 prompt_text = "jerry: Are you on Twitter?"
 stop_token = "<|endoftext|>"
